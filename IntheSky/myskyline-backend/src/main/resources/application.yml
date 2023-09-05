@@ -1,0 +1,39 @@
+jwt:
+  secret: mySecretKeymySecretKeymySecretKey
+  expiration: 604800
+
+spring:
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  datasource:
+    url: jdbc:mysql://myskyline-db.cfcmvjhqlmkw.us-east-1.rds.amazonaws.com:3306/mydb?characterEncoding=UTF8&autoReconnect=true
+    username: admin
+    password: admin1234
+    hikari:
+      connection-timeout: 5000
+      idle-timeout: 5000
+      maximum-pool-size: 10
+      minimum-idle: 3
+      connection-test-query: SELECT 0
+
+logging:
+  level:
+    org:
+#      springframework: debug
+      hibernate:
+        SQL: debug
+        orm.jdbc.bind: trace
+aws:
+  paramstore:
+    enabled: true
+    profile-separator: _
+    prefix: /s3
+    name: test
+
+access-key: accessKey
+secret-key: secretKey
