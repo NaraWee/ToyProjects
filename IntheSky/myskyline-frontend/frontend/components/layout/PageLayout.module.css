@@ -1,0 +1,31 @@
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-container {
+  flex: 0;
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.header {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.body-container {
+  flex: 1;
+  display: flex;
+  max-width: var(--max-width);
+  margin: 90px auto 0 auto;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.body {
+  width: 100vw;
+  padding: 0 20px;
+}
